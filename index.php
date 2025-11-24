@@ -1,0 +1,83 @@
+<?php
+// SİTENİN HAFIZASINI (SESSION) BAŞLAT
+// Bu, sunucuya "Bu kullanıcı giriş yapmış mı?" diye sorabilmemizi sağlar.
+// Her zaman sayfanın en üstünde olmalıdır.
+session_start();
+
+// 'giris_yapti' diye bir hafıza kaydı var mı ve 'true' mu?
+$kullanici_giris_yapti = isset($_SESSION['giris_yapti']) && $_SESSION['giris_yapti'] === true;
+?>
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanat Tarihi Platformu - Ana Sayfa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="logo">
+            <p>Sanat Tarihi Platformu</p>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.php">Ana Sayfa</a></li>
+                <li><a href="#">Sanat Akımları</a></li>
+                <li><a href="#">Sanatçılar</a></li>
+                <li><a href="#">Galeri</a></li>
+                <li><a href="#">Quiz</a></li>
+                <li><a href="#">Hakkında</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            
+            <?php if ($kullanici_giris_yapti): ?>
+                
+                <span class="welcome-message">
+                    Hoş geldiniz, <?php echo htmlspecialchars($_SESSION['kullanici_adi']); ?>!
+                </span>
+                <a href="cikis-yap.php" class="btn-logout">Çıkış Yap</a>
+
+            <?php else: ?>
+
+                <a href="giris-yap.html" class="btn-login">Giriş Yap</a>
+                <a href="kayitol.html" class="btn-signup">Kayıt Ol</a>
+
+            <?php endif; ?>
+
+        </div>
+    </header>
+
+    <main class="content-area">
+        <section class="hero-section">
+            <h1>Öne Çıkan Eserler Galerisi</h1>
+        </section>
+
+        <section class="popular-movements">
+            <h2>Popüler Sanat Akımları</h2>
+            <div class="card-container">
+                <div class="card">Akım 1 (Rönesans)</div>
+                <div class="card">Akım 2 (Empresyonizm)</div>
+                <div class="card">Akım 3 (Sürrealizm)</div>
+            </div>
+        </section>
+
+        <section class="quick-links">
+            <div class="search-box">
+                <p>Hızlı Arama Çubuğu</p>
+            </div>
+            <div class="quiz-invite">
+                <p>Quiz'i çözün!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2025 Sanat Tarihi Platformu. Tüm hakları saklıdır.</p>
+    </footer>
+
+</body>
+</html>

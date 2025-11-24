@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol - Sanat Tarihi Platformu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="logo">
+            <p>Sanat Tarihi Platformu</p>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="#">Sanat Akımları</a></li>
+                <li><a href="#">Sanatçılar</a></li>
+                <li><a href="#">Galeri</a></li>
+                <li><a href="#">Quiz</a></li>
+                <li><a href="#">Hakkında</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <a href="giris-yap.html" class="btn-login">Giriş Yap</a>
+            <a href="kayitol.html" class="btn-signup">Kayıt Ol</a>
+        </div>
+    </header>
+
+    <main class="content-area">
+        
+        <div class="registration-form-container">
+            <h2>Yeni Hesap Oluştur</h2>
+            
+            <form action="kayit-islemi.php" method="POST">
+                
+                <div class="form-group">
+ 
+
+<button type="submit" class="btn-submit">Hesap Oluştur</button>
+                    <label for="email">E-posta Adresiniz:</label>
+                    <input type="email" id="email" name="form_email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="kullanici_adi">Kullanıcı Adı:</label>
+                    <input type="text" id="kullanici_adi" name="form_kullanici_adi" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="sifre">Şifreniz:</label>
+                    <input type="password" id="sifre" name="form_sifre" required>
+                    <span class="toggle-password">Göster</span>
+        
+ 
+                </div>
+
+                <button type="submit" class="btn-submit">Hesap Oluştur</button>
+                
+                </form>
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2025 Sanat Tarihi Platformu. Tüm hakları saklıdır.</p>
+    </footer>
+
+</body>
+</html>
