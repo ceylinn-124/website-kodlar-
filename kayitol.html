@@ -19,7 +19,7 @@
             <h2>Sanat Dünyasına Katıl</h2>
             <p class="signup-subtitle">Ücretsiz hesap oluşturarak içeriklere erişin.</p>
             
-            <form action="kayit-islemi.php" method="post" class="signup-form">
+                <form onsubmit="event.preventDefault(); alert('Tebrikler! Hesabınız başarıyla oluşturuldu. Giriş sayfasına yönlendiriliyorsunuz...'); window.location.href='giris-yap.html';" class="signup-form"></form>
                 <div class="input-group">
                     <label for="email"><i class="fas fa-envelope"></i> E-posta Adresiniz:</label>
                     <input type="email" id="email" name="email" required placeholder="ornek@mail.com">
