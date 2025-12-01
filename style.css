@@ -9,8 +9,8 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f4f4f9;
-    padding-top: 80px; /* Navbar için boşluk */
+    background-color: #f8f9fa; /* Açık gri arka plan */
+    padding-top: 80px; /* Navbar için üstten boşluk */
 }
 
 a {
@@ -52,6 +52,11 @@ ul {
     margin: 0 15px;
 }
 
+.site-header nav ul li a {
+    color: #555;
+    font-weight: 500;
+}
+
 .site-header nav ul li a:hover {
     color: #007BFF;
 }
@@ -59,58 +64,49 @@ ul {
 /* --- KULLANICI İŞLEMLERİ (Giriş/Kayıt Butonları) --- */
 .user-actions {
     display: flex;
-    gap: 10px;
-}
-
-.btn-login, .btn-signup {
-    padding: 8px 16px;
-    border-radius: 5px;
-    font-weight: 600;
-    font-size: 0.9rem;
+    gap: 15px;
+    align-items: center;
 }
 
 .btn-login {
-    background-color: transparent;
-    border: 2px solid #007BFF;
     color: #007BFF;
+    font-weight: 600;
 }
 
 .btn-login:hover {
-    background-color: #007BFF;
-    color: white;
+    text-decoration: underline;
 }
 
 .btn-signup {
     background-color: #007BFF;
-    border: 2px solid #007BFF;
     color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: background 0.3s;
 }
 
 .btn-signup:hover {
     background-color: #0056b3;
-    border-color: #0056b3;
-}
-
-.btn-logout {
-    color: #dc3545;
-    font-weight: bold;
-    font-size: 0.9rem;
+    color: white;
 }
 
 /* --- ANA SAYFA İÇERİK --- */
 .content-area {
-    padding: 2rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
 /* Hero (Giriş) Bölümü */
 .hero-section {
     text-align: center;
-    padding: 60px 20px;
+    padding: 80px 20px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    border-radius: 15px;
-    margin-bottom: 40px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-radius: 20px;
+    margin-bottom: 50px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
 .hero-section h1 {
@@ -128,85 +124,58 @@ ul {
     text-align: center;
     margin-bottom: 30px;
     color: #2c3e50;
+    font-size: 2rem;
 }
 
 .card-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
 }
 
 .card {
     background: white;
-    padding: 2rem;
+    padding: 2.5rem;
     width: 300px;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     text-align: center;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #eee;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
 .card h3 {
     color: #007BFF;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* Arama Kutusu */
+.quick-links {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.search-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    color: #888;
 }
 
 /* --- FOOTER --- */
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 30px;
     background-color: #2c3e50;
     color: white;
     margin-top: 50px;
-}
-
-/* --- KAYIT OL / GİRİŞ YAP SAYFALARI İÇİN --- */
-.signup-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: calc(100vh - 140px);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=1920&q=80');
-    background-size: cover;
-    background-position: center;
-    border-radius: 15px;
-    margin: 20px;
-}
-
-.signup-card {
-    background-color: #ffffff;
-    padding: 2.5rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 450px;
-    text-align: center;
-}
-
-.input-group {
-    margin-bottom: 1.5rem;
-    text-align: left;
-}
-
-.input-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
-
-.input-group input {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-}
-
-.input-group input:focus {
-    border-color: #007BFF;
-    outline: none;
 }
