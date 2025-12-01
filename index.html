@@ -1,10 +1,8 @@
 <?php
-// SİTENİN HAFIZASINI (SESSION) BAŞLAT
-// Bu, sunucuya "Bu kullanıcı giriş yapmış mı?" diye sorabilmemizi sağlar.
-// Her zaman sayfanın en üstünde olmalıdır.
+
 session_start();
 
-// 'giris_yapti' diye bir hafıza kaydı var mı ve 'true' mu?
+
 $kullanici_giris_yapti = isset($_SESSION['giris_yapti']) && $_SESSION['giris_yapti'] === true;
 ?>
 
