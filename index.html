@@ -1,80 +1,69 @@
-<?php
-
-session_start();
-
-
-$kullanici_giris_yapti = isset($_SESSION['giris_yapti']) && $_SESSION['giris_yapti'] === true;
-?>
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanat Tarihi Platformu - Ana Sayfa</title>
+    <title>Sanat Tarihi Platformu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header class="site-header">
-        <div class="logo">
-            <p>Sanat Tarihi Platformu</p>
-        </div>
-        <nav class="main-nav">
+        <div class="logo">Sanat Tarihi Platformu</div>
+        
+        <nav>
             <ul>
-                <li><a href="index.php">Ana Sayfa</a></li>
-                <li><a href="#">Sanat Akımları</a></li>
-                <li><a href="#">Sanatçılar</a></li>
-                <li><a href="#">Galeri</a></li>
-                <li><a href="#">Quiz</a></li>
-                <li><a href="#">Hakkında</a></li>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="#akimlar">Sanat Akımları</a></li>
+                <li><a href="#sanatcilar">Sanatçılar</a></li>
+                <li><a href="#galeri">Galeri</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+                <li><a href="#hakkinda">Hakkında</a></li>
             </ul>
         </nav>
+
         <div class="user-actions">
-            
-            <?php if ($kullanici_giris_yapti): ?>
-                
-                <span class="welcome-message">
-                    Hoş geldiniz, <?php echo htmlspecialchars($_SESSION['kullanici_adi']); ?>!
-                </span>
-                <a href="cikis-yap.php" class="btn-logout">Çıkış Yap</a>
-
-            <?php else: ?>
-
-                <a href="giris-yap.html" class="btn-login">Giriş Yap</a>
-                <a href="kayitol.html" class="btn-signup">Kayıt Ol</a>
-
-            <?php endif; ?>
-
+            <a href="giris-yap.html" class="btn-login"><i class="fas fa-sign-in-alt"></i> Giriş Yap</a>
+            <a href="kayitol.html" class="btn-signup"><i class="fas fa-user-plus"></i> Kayıt Ol</a>
         </div>
     </header>
 
     <main class="content-area">
+        
         <section class="hero-section">
             <h1>Öne Çıkan Eserler Galerisi</h1>
+            <p>Sanatın büyülü dünyasını keşfetmeye hazır mısınız?</p>
         </section>
 
-        <section class="popular-movements">
+        <section class="popular-movements" id="akimlar">
             <h2>Popüler Sanat Akımları</h2>
             <div class="card-container">
-                <div class="card">Akım 1 (Rönesans)</div>
-                <div class="card">Akım 2 (Empresyonizm)</div>
-                <div class="card">Akım 3 (Sürrealizm)</div>
+                <div class="card">
+                    <h3>Rönesans</h3>
+                    <p>Yeniden doğuşun simgesi.</p>
+                </div>
+                <div class="card">
+                    <h3>Empresyonizm</h3>
+                    <p>Işığın ve anın büyüsü.</p>
+                </div>
+                <div class="card">
+                    <h3>Sürrealizm</h3>
+                    <p>Bilinçaltının dışavurumu.</p>
+                </div>
             </div>
         </section>
 
         <section class="quick-links">
             <div class="search-box">
-                <p>Hızlı Arama Çubuğu</p>
-            </div>
-            <div class="quiz-invite">
-                <p>Quiz'i çözün!</p>
+                <p><i class="fas fa-search"></i> Arama Çubuğu (Yakında Aktif)</p>
             </div>
         </section>
+
     </main>
 
-    <footer class="site-footer">
-        <p>© 2025 Sanat Tarihi Platformu. Tüm hakları saklıdır.</p>
+    <footer>
+        <p>&copy; 2025 Sanat Tarihi Platformu. Tüm hakları saklıdır.</p>
     </footer>
 
 </body>
