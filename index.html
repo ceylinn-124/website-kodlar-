@@ -4,66 +4,220 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sanat Tarihi Platformu</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* GENEL AYARLAR */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* HEADER (ÜST MENÜ) */
+        header {
+            background-color: #2c3e50; /* Resimdeki koyu lacivert */
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        /* Butonlar (Giriş Yap / Kayıt Ol) */
+        .btn-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn-login {
+            background-color: #e67e22; /* Turuncu buton */
+            color: #fff;
+        }
+
+        .btn-signup {
+            background-color: #d35400; /* Koyu turuncu buton */
+            color: #fff;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        /* HERO BÖLÜMÜ (KAPAK GÖRSELİ) */
+        .hero {
+            /* Arka plana internetten örnek bir klasik tablo koydum */
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Mona_Lisa.jpg/1200px-Mona_Lisa.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #eee;
+        }
+
+        .hero-btn {
+            background-color: #e67e22;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        /* ÖNE ÇIKAN DÖNEMLER (KARTLAR) */
+        .featured-section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .featured-section h2 {
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-size: 2rem;
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: #fff;
+            width: 300px;
+            padding: 40px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 5px solid #e67e22; /* Resimdeki turuncu üst çizgi */
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #2c3e50;
+            color: #ccc;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
 
-    <header class="site-header">
-        <div class="logo">Sanat Tarihi Platformu</div>
-        
+    <header>
+        <a href="#" class="logo">Sanat Tarihi</a>
         <nav>
-            <ul>
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="#akimlar">Sanat Akımları</a></li>
-                <li><a href="#sanatcilar">Sanatçılar</a></li>
-                <li><a href="#galeri">Galeri</a></li>
-                <li><a href="#quiz">Quiz</a></li>
-                <li><a href="#hakkinda">Hakkında</a></li>
-            </ul>
+            <a href="#">Ana Sayfa</a>
+            <a href="#">Dönemler</a>
+            <a href="#">Sanatçılar</a>
+            <a href="#">Hakkımızda</a>
+            
+            <div class="btn-group">
+                <a href="#" class="btn btn-login">Giriş Yap</a>
+                <a href="#" class="btn btn-signup">Kayıt Ol</a>
+            </div>
         </nav>
-
-        <div class="user-actions">
-            <a href="giris-yap.html" class="btn-login"><i class="fas fa-sign-in-alt"></i> Giriş Yap</a>
-            <a href="kayitol.html" class="btn-signup"><i class="fas fa-user-plus"></i> Kayıt Ol</a>
-        </div>
     </header>
 
-    <main class="content-area">
+    <section class="hero">
+        <h1>Sanatın Geçmişine Yolculuk</h1>
+        <p>Rönesans'tan Modernizme, sanat tarihinin derinliklerini keşfedin.</p>
+        <a href="#" class="hero-btn">Keşfetmeye Başla</a>
+    </section>
+
+    <section class="featured-section">
+        <h2>Öne Çıkan Dönemler</h2>
         
-        <section class="hero-section">
-            <h1>Öne Çıkan Eserler Galerisi</h1>
-            <p>Sanatın büyülü dünyasını keşfetmeye hazır mısınız?</p>
-        </section>
-
-        <section class="popular-movements" id="akimlar">
-            <h2>Popüler Sanat Akımları</h2>
-            <div class="card-container">
-                <div class="card">
-                    <h3>Rönesans</h3>
-                    <p>Yeniden doğuşun simgesi.</p>
-                </div>
-                <div class="card">
-                    <h3>Empresyonizm</h3>
-                    <p>Işığın ve anın büyüsü.</p>
-                </div>
-                <div class="card">
-                    <h3>Sürrealizm</h3>
-                    <p>Bilinçaltının dışavurumu.</p>
-                </div>
+        <div class="cards-container">
+            <div class="card">
+                <h3>Rönesans</h3>
+                <p>Yeniden doğuşun altın çağı.</p>
             </div>
-        </section>
 
-        <section class="quick-links">
-            <div class="search-box">
-                <p><i class="fas fa-search"></i> Arama Çubuğu (Yakında Aktif)</p>
+            <div class="card">
+                <h3>Barok</h3>
+                <p>Duygu, detay ve ihtişam.</p>
             </div>
-        </section>
 
-    </main>
+            <div class="card">
+                <h3>Modern Sanat</h3>
+                <p>Kalıpların yıkıldığı dönem.</p>
+            </div>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; 2025 Sanat Tarihi Platformu. Tüm hakları saklıdır.</p>
+        <p>&copy; 2024 Sanat Tarihi Platformu. Tüm hakları saklıdır.</p>
     </footer>
 
 </body>
